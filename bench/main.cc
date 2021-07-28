@@ -28,7 +28,7 @@ bool Fixture::no_check = false;
 BENCHMARK_DEFINE_F(Fixture, First_Bench)
 (benchmark::State &st)
 {
-    this->bench(st, to_bench, 1 << 9);
+    this->bench(st, to_bench, std::size_t(1) << 25);
 }
 
 BENCHMARK_REGISTER_F(Fixture, First_Bench)->UseRealTime()->Unit(benchmark::kMillisecond);
